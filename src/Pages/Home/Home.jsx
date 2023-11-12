@@ -21,7 +21,10 @@ const Home = () => {
         }
       ></CoverTitle>
       <Title title={"Check it out"} subTitle={"FROM OUR MENU"}></Title>
-      <PopolarManu category={"popular"}></PopolarManu>
+      <PopolarManu
+        category={"popular"}
+        button={"View Full  Menu"}
+      ></PopolarManu>
       <ContactNumber></ContactNumber>
       <Title title={"Should Try"} subTitle={"CHEF RECOMMENDS"}></Title>
       <ChefCard></ChefCard>

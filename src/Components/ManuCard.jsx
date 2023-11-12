@@ -6,7 +6,7 @@ const ManuCard = () => {
   return (
     <Container>
       <div
-        className="object-cover bg-center bg-cover px-10 py-2 text-white relative"
+        className="object-cover bg-center bg-cover px-10 py-2 mt-32 text-white relative"
         style={{ backgroundImage: `url(${image})` }}
       >
         <div className="absolute inset-0 bg-black opacity-30 "></div>

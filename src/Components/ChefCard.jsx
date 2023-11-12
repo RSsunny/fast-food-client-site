@@ -7,7 +7,7 @@ import Container from "./Shared/Container";
 const ChefCard = () => {
   return (
     <Container>
-      <div className="flex justify-between gap-5 lg:gap-10 font-inter">
+      <div className="flex justify-between gap-5 lg:gap-10 font-inter px-5 lg:px-0">
         <div className=" text-center bg-gray-200">
           <div className="overflow-hidden w-full h-[300px] mb-5 ">
             <img

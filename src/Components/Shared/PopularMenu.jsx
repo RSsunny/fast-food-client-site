@@ -3,7 +3,7 @@ import Container from "./Container";
 import CardList from "../cardList";
 import { Link } from "react-router-dom";
 
-const PopolarManu = ({ category }) => {
+const PopolarManu = ({ category, button, img, title, details }) => {
   const [product, setProduct] = useState([]);
   useEffect(() => {
     fetch("menu.json")
@@ -15,14 +15,26 @@ const PopolarManu = ({ category }) => {
 
   return (
     <Container>
-      <div className="grid grid-cols-1 md:grid-cols-2 justify-between md:gap-x-10 lg:gap-x-20 gap-y-5 lg:gap-y-10">
+      {title && (
+        <div
+          className="object-cover bg-center flex justify-center items-center h-[500px] text-white mb-20"
+          style={{ backgroundImage: `url("${img}")` }}
+        >
+          <div className="w-3/4 mx-auto p-20 bg-black bg-opacity-50 text-center">
+            <h1 className="text-3xl font-cinzel font-bold ">{title}</h1>
+            <p className="font-inter mt-3">{details}</p>
+          </div>
+        </div>
+      )}
+
+      <div className="grid grid-cols-1 md:grid-cols-2 justify-between md:gap-x-10 lg:gap-x-20 gap-y-5 lg:gap-y-10 px-5 lg:px-0">
         {popularProduct?.map((data) => (
           <CardList key={data._id} data={data}></CardList>
         ))}
       </div>
       <div className="text-center my-20">
         <Link className="px-6 py-2 border-b-2 font-cinzel font-medium rounded-lg">
-          View Full Menu
+          {button}
         </Link>
       </div>
     </Container>

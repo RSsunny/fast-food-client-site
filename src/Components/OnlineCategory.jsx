@@ -44,7 +44,7 @@ const OnlineCategory = () => {
             },
           }}
           modules={[Pagination]}
-          className="mySwiper mb-10"
+          className="mySwiper mb-32 "
         >
           <SwiperSlide className="">
             <div className="relative">
