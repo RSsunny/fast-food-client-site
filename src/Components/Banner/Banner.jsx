@@ -1,5 +1,39 @@
+import img03 from "../../assets/home/03.png";
+import img01 from "../../assets/home/01.jpg";
+import img02 from "../../assets/home/02.jpg";
+import img04 from "../../assets/home/04.jpg";
+import img05 from "../../assets/home/05.png";
+import img06 from "../../assets/home/06.png";
+import React, { Component } from "react";
+import Container from "../Shared/Container";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
+
 const Banner = () => {
-  return <div></div>;
+  return (
+    <div className="max-w-[1400px] mx-auto px-2 md:px-5 lg:px-0  ">
+      <Carousel className="" autoPlay={true}>
+        <div className="relative   mx-auto text-center w-full ">
+          <img src={img02} className="object-cover mx-auto" />
+        </div>
+        <div>
+          <img src={img01} />
+        </div>
+        <div>
+          <img src={img03} />
+        </div>
+        <div>
+          <img src={img04} />
+        </div>
+        <div>
+          <img src={img05} />
+        </div>
+        <div>
+          <img src={img06} />
+        </div>
+      </Carousel>
+    </div>
+  );
 };
 
 export default Banner;

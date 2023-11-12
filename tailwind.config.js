@@ -2,7 +2,17 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        inter: `'Inter', sans-serif`,
+        cinzel: `'Cinzel', serif`,
+        rolewoy: `'Raleway', sans-serif`,
+      },
+    },
+    letterSpacing: {
+      tightest: "-.075em",
+      widest: ".36em",
+    },
   },
   plugins: [require("daisyui")],
 };
