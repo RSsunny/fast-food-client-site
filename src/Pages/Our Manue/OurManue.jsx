@@ -1,4 +1,3 @@
-import Container from "../../Components/Shared/Container";
 import CoverTitle from "../../Components/Shared/CoverTitle";
 import PopolarManu from "../../Components/Shared/PopularMenu";
 import Title from "../../Components/Shared/Title";
@@ -15,6 +14,7 @@ const OurManue = () => {
         img={image1}
         title={"OUR MENU"}
         details={"Would you like to try a dish?"}
+        hight={true}
       ></CoverTitle>
 
       {/* Today offer */}
@@ -56,6 +56,7 @@ const OurManue = () => {
           "Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         }
       ></PopolarManu>
+
       {/* soup */}
       <PopolarManu
         category={"soup"}

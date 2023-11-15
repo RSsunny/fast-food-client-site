@@ -19,11 +19,11 @@ const UserComment = () => {
   const [comment, setcomment] = useState([]);
 
   useEffect(() => {
-    fetch("reviews.json")
+    fetch("http://localhost:5000/api/v1/reviwe")
       .then((res) => res.json())
       .then((data) => setcomment(data));
   }, []);
-  console.log(comment);
+
   return (
     <Container>
       <Swiper

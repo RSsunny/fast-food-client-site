@@ -21,7 +21,7 @@ const ChefCard = () => {
             Lettuce, Eggs, Parmesan Cheese, Chicken Breast Fillets.
           </p>
           <div className="my-10 uppercase font-bold">
-            <Link className="border-b-2 border-yellow-500  bg-gray-300 rounded-lg text-yellow-500 text-xl px-4 py-2">
+            <Link className="border-b-2 border-yellow-500  bg-gray-300 rounded-lg text-yellow-500 text-xl px-4 py-2 hover:bg-black">
               add to cart{" "}
             </Link>
           </div>
@@ -39,7 +39,7 @@ const ChefCard = () => {
             Lettuce, Eggs, Parmesan Cheese, Chicken Breast Fillets.
           </p>
           <div className="my-10 uppercase font-bold">
-            <Link className="border-b-2 border-yellow-500  bg-gray-300 rounded-lg text-yellow-500 text-xl px-4 py-2">
+            <Link className="border-b-2 border-yellow-500  bg-gray-300 rounded-lg text-yellow-500 text-xl px-4 py-2 hover:bg-black">
               add to cart{" "}
             </Link>
           </div>
@@ -57,7 +57,7 @@ const ChefCard = () => {
             Lettuce, Eggs, Parmesan Cheese, Chicken Breast Fillets.
           </p>
           <div className="my-10 uppercase font-bold">
-            <Link className="border-b-2 border-yellow-500  bg-gray-300 rounded-lg text-yellow-500 text-xl px-4 py-2">
+            <Link className="border-b-2 border-yellow-500  bg-gray-300 rounded-lg text-yellow-500 text-xl px-4 py-2 hover:bg-black ">
               add to cart{" "}
             </Link>
           </div>

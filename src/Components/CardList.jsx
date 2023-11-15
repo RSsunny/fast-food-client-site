@@ -1,5 +1,4 @@
 const CardList = ({ data }) => {
-  console.log(Object.keys(data).join(","));
   const { _id, name, recipe, image, category, price } = data;
   return (
     <div className="flex items-center gap-5 ">

@@ -3,10 +3,10 @@ import Container from "./Container";
 import CardList from "../cardList";
 import { Link } from "react-router-dom";
 
-const PopolarManu = ({ category, button, img, title, details }) => {
+const PopolarManu = ({ _id, category, button, img, title, details }) => {
   const [product, setProduct] = useState([]);
   useEffect(() => {
-    fetch("menu.json")
+    fetch("http://localhost:5000/api/v1/menu")
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, []);
@@ -33,7 +33,11 @@ const PopolarManu = ({ category, button, img, title, details }) => {
         ))}
       </div>
       <div className="text-center my-20">
-        <Link className="px-6 py-2 border-b-2 font-cinzel font-medium rounded-lg">
+        <Link
+          to={"/ourshop"}
+          state={category}
+          className="px-6 py-2 border-b-2 font-cinzel font-medium rounded-lg hover:bg-black hover:text-yellow-500 hover:border-none"
+        >
           {button}
         </Link>
       </div>

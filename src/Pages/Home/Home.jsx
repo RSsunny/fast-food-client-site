@@ -8,6 +8,7 @@ import ContactNumber from "./ContactNumber";
 import ChefCard from "../../Components/ChefCard";
 import ManuCard from "../../Components/ManuCard";
 import UserComment from "../../Components/UserComment";
+
 const Home = () => {
   return (
     <>

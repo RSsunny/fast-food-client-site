@@ -1,6 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
-
+import useAuth from "../../Hooks/useAuth";
+import { CiUser } from "react-icons/ci";
 const Navbar = () => {
+  const { user } = useAuth();
   return (
     <div className="fixed top-0 z-20 w-full mx-auto">
       <div className="flex justify-between items-center py-3  uppercase bg-black bg-opacity-50    max-w-[1400px] mx-auto px-2 md:px-5   w-full">
@@ -74,7 +76,17 @@ const Navbar = () => {
             </NavLink>
           </div>
           <div>
-            <Link>SignSp</Link>
+            {user ? (
+              <Link to={"/profile"}>
+                <div className="avatar">
+                  <div className="w-9 rounded-full text-4xl">
+                    {user?.photoURL ? <img src={user.photoURL} /> : <CiUser />}
+                  </div>
+                </div>
+              </Link>
+            ) : (
+              <Link to={"/signin"}>SignIn</Link>
+            )}
           </div>
         </div>
       </div>
