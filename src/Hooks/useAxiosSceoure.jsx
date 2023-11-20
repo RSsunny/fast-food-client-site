@@ -4,8 +4,8 @@ export const axiosSceure = axios.create({
   baseURL: "http://localhost:5000",
   withCredentials: true,
 });
-const useAxios = () => {
+const useAxiosSceoure = () => {
   return axiosSceure;
 };
 
-export default useAxios;
+export default useAxiosSceoure;

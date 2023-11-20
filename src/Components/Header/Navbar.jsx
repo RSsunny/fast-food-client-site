@@ -1,8 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import { CiUser } from "react-icons/ci";
+import { GrCart } from "react-icons/gr";
+import useCart from "../../Hooks/useCart";
 const Navbar = () => {
   const { user } = useAuth();
+  const { cart } = useCart();
+
   return (
     <div className="fixed top-0 z-20 w-full mx-auto">
       <div className="flex justify-between items-center py-3  uppercase bg-black bg-opacity-50    max-w-[1400px] mx-auto px-2 md:px-5   w-full">
@@ -75,6 +79,14 @@ const Navbar = () => {
               Our Shop
             </NavLink>
           </div>
+          <Link to={"/deshbord/mycart"}>
+            <div className="indicator">
+              <span className="indicator-item badge w-6 text-xs rounded-full bg-yellow-500 text-white border-none">
+                {cart.length}+
+              </span>
+              <GrCart className="text-2xl " />
+            </div>
+          </Link>
           <div>
             {user ? (
               <Link to={"/profile"}>

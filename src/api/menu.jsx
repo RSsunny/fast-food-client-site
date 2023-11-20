@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import useAxios from "../Hooks/useAxios";
+import useAxiosSceoure from "../Hooks/useAxiosSceoure";
 
 const Menu = (items) => {
-  const axios = useAxios();
+  const axios = useAxiosSceoure();
   const { isLoading, isError, data, error, refetch, isFetching } = useQuery({
     queryKey: ["menus", items],
     queryFn: async () => {

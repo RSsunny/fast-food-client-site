@@ -26,7 +26,7 @@ const ManuCard = () => {
                 tempore consequatur consequuntur omnis <br />
                 ullam maxime tenetur.
               </p>
-              <Link className="px-6 py-2  border-b-2 font-cinzel font-medium rounded-lg">
+              <Link className="px-6 py-2  border-b-2 font-cinzel font-medium rounded-lg ">
                 View Full Menu
               </Link>
             </div>

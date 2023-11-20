@@ -10,7 +10,9 @@ const Private = ({ children }) => {
   if (user) {
     return children;
   }
-  return <Navigate to={"/signup"} state={location.pathname}></Navigate>;
+  return (
+    <Navigate to={"/signup"} state={{ from: location }} replace></Navigate>
+  );
 };
 
 export default Private;

@@ -7,6 +7,9 @@ import SignIn from "../Pages/SignIn/SignIn";
 import SignUp from "../Pages/SignUp/SignUp";
 import Profile from "../Pages/Profile/Profile";
 import Private from "../Private/private";
+import Deshbord from "../Layout/Deshbord";
+import ShopinhCaert from "../Pages/Deshbord/Users/ShopinhCaert";
+import UserHome from "../Pages/Deshbord/Users/UserHome";
 
 const MainRouter = createBrowserRouter([
   {
@@ -23,11 +26,7 @@ const MainRouter = createBrowserRouter([
       },
       {
         path: "/ourshop",
-        element: (
-          <Private>
-            <OurShop></OurShop>
-          </Private>
-        ),
+        element: <OurShop></OurShop>,
       },
       {
         path: "/profile",
@@ -46,6 +45,20 @@ const MainRouter = createBrowserRouter([
   {
     path: "/signup",
     element: <SignUp></SignUp>,
+  },
+  {
+    path: "/deshbord",
+    element: <Deshbord></Deshbord>,
+    children: [
+      {
+        path: "/deshbord/mycart",
+        element: <ShopinhCaert></ShopinhCaert>,
+      },
+      {
+        path: "/deshbord/deshbord",
+        element: <UserHome></UserHome>,
+      },
+    ],
   },
 ]);
 

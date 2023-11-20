@@ -1,7 +1,7 @@
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook, BsGithub } from "react-icons/bs";
 
-import { Link } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { FaRegEye, FaEyeSlash } from "react-icons/fa";
 
 import { useState } from "react";
@@ -11,6 +11,11 @@ import useAuth from "../../Hooks/useAuth";
 const SignIn = () => {
   const [eye, setEye] = useState(false);
   const { userlogin, midealogin } = useAuth();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const from = location?.state?.from?.pathname || "/";
+  console.log(from);
   const {
     register,
     handleSubmit,
@@ -19,9 +24,7 @@ const SignIn = () => {
   } = useForm();
   const onSubmit = (data) => {
     userlogin(data.email, data.password)
-      .then((result) => {
-        console.log(result.user);
-      })
+      .then((result) => navigate(from))
       .catch((err) => {
         console.log(err);
       });
@@ -29,7 +32,7 @@ const SignIn = () => {
 
   const mideaLogin = async (midea) => {
     midea()
-      .then(() => {})
+      .then(() => navigate(from))
       .catch((err) => {
         console.log(err);
       });
