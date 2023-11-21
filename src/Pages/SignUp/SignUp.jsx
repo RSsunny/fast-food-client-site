@@ -5,9 +5,10 @@ import { FaEyeSlash, FaRegEye } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet";
 import useAuth from "../../Hooks/useAuth";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 const SignUp = () => {
   const [eye, setEye] = useState(false);
-
+  const axios = useAxiosPublic();
   const {
     register,
     handleSubmit,
@@ -18,6 +19,11 @@ const SignUp = () => {
     createUser(data.email, data.password)
       .then((result) => {
         console.log(result.user);
+        const email = data.email;
+        const userinfo = { email };
+        axios.post("/api/v1/users", userinfo).then((res) => {
+          console.log(res.data);
+        });
       })
       .catch((err) => {
         console.log(err);

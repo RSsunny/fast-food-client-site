@@ -7,12 +7,14 @@ import { FaRegEye, FaEyeSlash } from "react-icons/fa";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import useAuth from "../../Hooks/useAuth";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 const SignIn = () => {
   const [eye, setEye] = useState(false);
   const { userlogin, midealogin } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
+  const axios = useAxiosPublic();
 
   const from = location?.state?.from?.pathname || "/";
   console.log(from);
@@ -24,7 +26,10 @@ const SignIn = () => {
   } = useForm();
   const onSubmit = (data) => {
     userlogin(data.email, data.password)
-      .then((result) => navigate(from))
+      .then(() => {
+        navigate(from);
+      })
+
       .catch((err) => {
         console.log(err);
       });
@@ -32,7 +37,13 @@ const SignIn = () => {
 
   const mideaLogin = async (midea) => {
     midea()
-      .then(() => navigate(from))
+      .then((result) => {
+        const userinfo = { email: result.user.email };
+        axios.post("/api/v1/users", userinfo).then((res) => {
+          console.log(res.data);
+        });
+        navigate(from);
+      })
       .catch((err) => {
         console.log(err);
       });

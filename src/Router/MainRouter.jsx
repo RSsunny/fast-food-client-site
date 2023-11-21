@@ -10,6 +10,9 @@ import Private from "../Private/private";
 import Deshbord from "../Layout/Deshbord";
 import ShopinhCaert from "../Pages/Deshbord/Users/ShopinhCaert";
 import UserHome from "../Pages/Deshbord/Users/UserHome";
+import AllUser from "../Pages/Deshbord/Admin/AllUser";
+import AdminRoute from "../Private/AdminRoute";
+import Additems from "../Pages/Deshbord/Admin/Additems";
 
 const MainRouter = createBrowserRouter([
   {
@@ -48,14 +51,41 @@ const MainRouter = createBrowserRouter([
   },
   {
     path: "/deshbord",
-    element: <Deshbord></Deshbord>,
+    element: (
+      <Private>
+        <Deshbord></Deshbord>
+      </Private>
+    ),
     children: [
+      // admin deshbord--------------------
       {
-        path: "/deshbord/mycart",
-        element: <ShopinhCaert></ShopinhCaert>,
+        path: "allusers",
+        element: (
+          <AdminRoute>
+            <AllUser></AllUser>
+          </AdminRoute>
+        ),
       },
       {
-        path: "/deshbord/deshbord",
+        path: "additems",
+        element: (
+          <AdminRoute>
+            <Additems></Additems>
+          </AdminRoute>
+        ),
+      },
+
+      // user deshbord.............
+      {
+        path: "mycart",
+        element: (
+          <Private>
+            <ShopinhCaert></ShopinhCaert>
+          </Private>
+        ),
+      },
+      {
+        path: "userhome",
         element: <UserHome></UserHome>,
       },
     ],

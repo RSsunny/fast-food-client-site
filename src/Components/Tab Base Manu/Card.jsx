@@ -30,12 +30,10 @@ const Card = ({ data }) => {
     } else {
       const manuList = {
         email: user?.email,
-        manu_Id: _id,
-        price: price,
-        category: category,
+        data,
       };
       console.log(manuList);
-      axios.post("/api/v1/users", manuList).then((res) => {
+      axios.post("/api/v1/carts", manuList).then((res) => {
         if (res.data.insertedId) {
           Swal.fire({
             position: "top-end",
